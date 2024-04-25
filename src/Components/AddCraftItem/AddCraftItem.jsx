@@ -1,3 +1,6 @@
+import { data } from "autoprefixer";
+import Swal from "sweetalert2";
+
 const AddCraftItem = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -12,7 +15,7 @@ const AddCraftItem = () => {
     const stockStatus = e.target.stockStatus.value;
     const email = e.target.email.value;
     const userName = e.target.userName.value;
-    console.log(
+    const allData = {
       image,
       item,
       subCategory,
@@ -23,8 +26,30 @@ const AddCraftItem = () => {
       processTime,
       stockStatus,
       email,
-      userName
-    );
+      userName,
+    };
+    console.log(allData);
+
+    // sent data from client to server
+    fetch("http://localhost:5000/artAndCrafts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(allData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success",
+            text: "Item Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (
