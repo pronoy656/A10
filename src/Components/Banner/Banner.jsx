@@ -43,9 +43,9 @@ const Banner = () => {
           </a>
         </div>
       </div>
-      <div id="slide4" className="carousel-item relative w-full">
+      <div id="slide4" className="carousel-item relative w-full h-[500px]">
         <img
-          src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+          src="https://i.ibb.co/82FCHnX/7875751-11zon.jpg"
           className="w-full"
         />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
