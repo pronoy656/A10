@@ -1,11 +1,37 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const { userLogin } = useContext(AuthContext);
+  // success message
+  const [success, setSuccess] = useState("");
+  // Error Message
+  const [error, setError] = useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    // succes and error message clear
+    setSuccess("");
+    setError("");
+
+    userLogin(email, password)
+      .then((userLogin) => {
+        console.log(userLogin.user);
+        setSuccess("login Successfully");
+        toast.success("Successfully Login");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        setError("Wrong Password");
+      });
   };
 
   return (
@@ -44,6 +70,10 @@ const Login = () => {
               <button className="btn btn-outline">Google</button>
               <button className="btn btn-outline">Git Hub</button>
             </div>
+            {success && (
+              <p className="font-medium mt-3 text-green-500">{success}</p>
+            )}
+            {error && <p className="font-medium mt-3 text-red-600">{error}</p>}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
