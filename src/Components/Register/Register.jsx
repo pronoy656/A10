@@ -1,6 +1,14 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  // success message
+  const [success, setSuccess] = useState("");
+  // error Message
+  const [error, setError] = useState("");
+
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.text.value;
@@ -8,6 +16,36 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, photo, email, password);
+
+    // success and error msg clear
+    setSuccess("");
+    setError("");
+
+    // Password Validation
+    if (password.length < 6) {
+      setError("Password Should be at least 6 characters ");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("Must have an Upper case letter in the password");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setError("Must have an lower case letter in the password");
+      return;
+    }
+
+    // userCreate
+    createUser(email, password)
+      .then((userCreate) => {
+        const user = userCreate.user;
+        console.log(user);
+        setSuccess("Account created SuccessFully");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        setError("Already Use This Account");
+      });
   };
 
   return (
@@ -66,6 +104,10 @@ const Register = () => {
                 required
               />
             </div>
+            {success && (
+              <p className="font-medium mt-3 text-green-500">{success}</p>
+            )}
+            {error && <p className="font-medium mt-3 text-red-600">{error}</p>}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
