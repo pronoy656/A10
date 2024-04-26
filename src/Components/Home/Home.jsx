@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import SingleArtAndCart from "../SingleArtAndCart/SingleArtAndCart";
+import ExtraCustomer from "../ExtraCustomer/ExtraCustomer";
 
 const Home = () => {
   const allArtAndCarts = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
           ></SingleArtAndCart>
         ))}
       </div>
+      <ExtraCustomer></ExtraCustomer>
     </div>
   );
 };

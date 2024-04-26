@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className="footer p-10 bg-[url('https://i.ibb.co/JKRG51V/images.jpg')] text-base-content">
       <aside>
         <svg
           width="50"
           height="50"
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://i.ibb.co/mDcYMXS/mokeup.jpg"
           fillRule="evenodd"
           clipRule="evenodd"
           className="fill-current"

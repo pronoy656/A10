@@ -55,7 +55,7 @@ const NavBar = () => {
         </div>
         <img
           className="w-16 h-16 rounded-full"
-          src="https://i.ibb.co/V9Wbx41/optimized-product-thumb-stage.jpg"
+          src="https://i.ibb.co/mDcYMXS/mokeup.jpg"
           alt=""
         />
         <a className="btn btn-ghost text-xl">Art and Craft Store</a>
