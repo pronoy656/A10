@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const ShowAllData = ({ singleArtAndCart }) => {
   const {
+    _id,
     image,
     item,
     subCategory,
@@ -49,11 +52,13 @@ const ShowAllData = ({ singleArtAndCart }) => {
             <td className="font-bold w-1/4">
               {userName}
               <br />
-              <span className="badge badge-ghost badge-sm">{email}</span>
+              <span>{email}</span>
             </td>
             <td className="font-bold w-1/6">{price}</td>
             <th className="w-1/6">
-              <button className="btn btn-secondary btn-md">details</button>
+              <Link to={`/detailsPage/${_id}`}>
+                <button className="btn btn-secondary btn-md">details</button>
+              </Link>
             </th>
           </tr>
         </tbody>

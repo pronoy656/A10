@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const SingleArtAndCart = ({ singleArtAndCart }) => {
   const {
+    _id,
     image,
     item,
     subCategory,
@@ -28,7 +31,10 @@ const SingleArtAndCart = ({ singleArtAndCart }) => {
       </div>
       <h1>Name:{userName}</h1>
       <div className="flex justify-end">
-        <button className="btn btn-secondary">View Details</button>
+        <Link to={`/detailsPage/${_id}`}>
+          {" "}
+          <button className="btn btn-secondary">View Details</button>
+        </Link>
       </div>
     </div>
   );

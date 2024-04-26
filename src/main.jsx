@@ -12,6 +12,7 @@ import MyArtAndCraftList from "./Components/MyArtAndCraftList/MyArtAndCraftList.
 import Home from "./Components/Home/Home.jsx";
 import Login from "./Components/LogIn/Login.jsx";
 import Register from "./Components/Register/Register.jsx";
+import DetailsPage from "./Components/DetailsPage/DetailsPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "/detailsPage/:_id",
+        element: <DetailsPage></DetailsPage>,
+        loader: () => fetch("http://localhost:5000/artAndCrafts"),
       },
     ],
   },
