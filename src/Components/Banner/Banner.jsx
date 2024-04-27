@@ -4,7 +4,7 @@ const Banner = () => {
       <div id="slide1" className="carousel-item relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/xf9vjRC/flat-lay-colorful-aquarelle-with-copy-space-11zon.jpg"
-          className="w-full"
+          className="w-full rounded-xl"
         />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide4" className="btn btn-circle">
@@ -32,7 +32,7 @@ const Banner = () => {
       <div id="slide3" className="carousel-item relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/ryCWNc3/abstract-eye-portrait-young-women-elegance-generated-by-ai-11zon.jpg"
-          className="w-full"
+          className="w-full rounded-xl"
         />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide2" className="btn btn-circle">

@@ -15,6 +15,7 @@ import Register from "./Components/Register/Register.jsx";
 import DetailsPage from "./Components/DetailsPage/DetailsPage.jsx";
 import AuthProvider from "./Components/AuthProvider/AuthProvider.jsx";
 import toast, { Toaster } from "react-hot-toast";
+import { Typewriter } from "react-simple-typewriter";
 
 const router = createBrowserRouter([
   {
@@ -64,5 +65,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <RouterProvider router={router} />
     </AuthProvider>
     <Toaster />
+    <Typewriter />
   </React.StrictMode>
 );
