@@ -91,13 +91,19 @@ const AddCraftItem = () => {
               <div className="label">
                 <span className="label-text">Subcategory-Name</span>
               </div>
-              <input
-                type="text"
-                name="subCategory"
-                placeholder="subcategory-Name"
-                className="input input-bordered w-full max-w-xs"
-                required
-              />
+              <select className="select select-bordered" name="subCategory">
+                <option disabled selected>
+                  Pick one subcategory
+                </option>
+                <option value={"Landscape Painting"}>Landscape Painting</option>
+                <option value={"Portrait Drawing"}>Portrait Drawing</option>
+                <option value={"Watercolor Painting"}>
+                  Watercolor Painting
+                </option>
+                <option value={"Oil Painting"}>Oil Painting</option>
+                <option value={"Charcoal Sketching"}>Charcoal Sketching</option>
+                <option value={"Cartoon Drawing"}>Cartoon Drawing</option>
+              </select>
             </label>
             <label className="form-control w-full max-w-xs">
               <div className="label">

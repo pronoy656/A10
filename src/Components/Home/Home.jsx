@@ -14,7 +14,7 @@ const Home = () => {
       <p className="text-center text-3xl font-extrabold mb-6">
         Craft items section
       </p>
-      <div className="grid grid-cols-3 gap-x-4">
+      <div className="grid grid-cols-3 gap-x-4 gap-y-4">
         {allArtAndCarts.map((singleArtAndCart) => (
           <SingleArtAndCart
             key={singleArtAndCart._id}

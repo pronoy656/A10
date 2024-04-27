@@ -18,19 +18,19 @@ const SingleArtAndCart = ({ singleArtAndCart }) => {
 
   return (
     <div>
-      <div className="w-96 border">
-        <img className="w-96 h-72" src={image} alt="" />
-        <h1>Title:{item}</h1>
-        <h1>Subcategory:{subCategory}</h1>
+      <div className="w-[420px] border space-y-4 p-4 bg-red-100">
+        <img className="w-96 h-72 rounded-2xl" src={image} alt="" />
+        <h1 className="text-2xl font-semibold">Title: {item}</h1>
+        <h1 className="text-xl font-medium">Subcategory: {subCategory}</h1>
         <div className="flex justify-between">
-          <h1>Price:{price}</h1>
-          <h1>Rating:{rating}</h1>
+          <h1 className="text-xl font-medium">Price: {price} BDT</h1>
+          <h1 className="text-xl font-medium">Rating:{rating}</h1>
         </div>
         <div className="flex justify-between">
-          <h1>Stock-status:{stockStatus}</h1>
-          <h1>Process-time:{processTime}</h1>
+          <h1 className="text-xl font-medium">Stock-status:{stockStatus}</h1>
+          <h1 className="text-xl font-medium">Process-time:{processTime}</h1>
         </div>
-        <h1>Name:{userName}</h1>
+        <h1 className="text-xl font-medium">Name:{userName}</h1>
         <div className="flex justify-end">
           <Link to={`/detailsPage/${_id}`}>
             {" "}
