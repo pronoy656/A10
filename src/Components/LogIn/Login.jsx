@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -9,6 +9,10 @@ const Login = () => {
   const [success, setSuccess] = useState("");
   // Error Message
   const [error, setError] = useState("");
+
+  // Declare location and navigate because after login user can easily visit their location
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,6 +29,7 @@ const Login = () => {
         console.log(userLogin.user);
         setSuccess("login Successfully");
         toast.success("Successfully Login");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorCode = error.code;

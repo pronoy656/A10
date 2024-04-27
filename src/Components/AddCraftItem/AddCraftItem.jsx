@@ -1,7 +1,10 @@
 import { data } from "autoprefixer";
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AddCraftItem = () => {
+  const { user } = useContext(AuthContext);
   const handleAddProduct = (e) => {
     e.preventDefault();
     const image = e.target.image.value;
@@ -180,9 +183,10 @@ const AddCraftItem = () => {
             <input
               type="email"
               name="email"
+              defaultValue={user?.email}
               placeholder="User-Email"
               className="input input-bordered w-full max-w-xs"
-              required
+              readOnly
             />
           </label>
         </div>
@@ -194,6 +198,7 @@ const AddCraftItem = () => {
           <input
             type="text"
             name="userName"
+            defaultValue={user?.displayName}
             placeholder="User-Name"
             className="input input-bordered w-full max-w-xs"
             required

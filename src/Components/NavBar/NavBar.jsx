@@ -1,6 +1,15 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user, userLogout } = useContext(AuthContext);
+
+  // work logout button
+  const handleLogOut = () => {
+    userLogout().then().catch();
+  };
+
   const navLink = (
     <>
       <li>
@@ -53,6 +62,7 @@ const NavBar = () => {
             {navLink}
           </ul>
         </div>
+
         <img
           className="w-16 h-16 rounded-full"
           src="https://i.ibb.co/mDcYMXS/mokeup.jpg"
@@ -98,21 +108,29 @@ const NavBar = () => {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </label>
-        <div className="tooltip tooltip-bottom" data-tip="hello">
-          <div className="w-12 rounded">
-            <img
-              className="rounded-full"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
-          </div>
-        </div>
-        <NavLink to={"/login"}>
-          <a className="btn">Log in</a>
-        </NavLink>
-        <NavLink to={"/register"}>
-          <a className="btn">Register</a>
-        </NavLink>
       </div>
+      {user ? (
+        <div className="navbar-end">
+          <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+            <div className="w-12 rounded">
+              <img className="rounded-full" src={user.photoURL} />
+            </div>
+          </div>
+          ;
+          <a onClick={handleLogOut} className="btn bg-red-600 text-white">
+            Log Out
+          </a>
+        </div>
+      ) : (
+        <div className="navbar-end">
+          <NavLink to={"/login"}>
+            <a className="btn">Log in</a>
+          </NavLink>
+          <NavLink to={"/register"}>
+            <a className="btn">Register</a>
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 };
