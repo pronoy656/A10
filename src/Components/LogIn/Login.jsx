@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle } = useContext(AuthContext);
   // success message
   const [success, setSuccess] = useState("");
   // Error Message
@@ -36,6 +36,20 @@ const Login = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         setError("Wrong Password");
+      });
+  };
+
+  // google Signin
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then((googleUser) => {
+        const userGoogle = googleUser.user;
+        console.log(userGoogle);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        const errorCode = error.code;
+        console.log(errorMessage, errorCode);
       });
   };
 
@@ -72,7 +86,16 @@ const Login = () => {
               />
             </div>
             <div className="flex mt-5 gap-x-6">
-              <button className="btn btn-outline">Google</button>
+              <button
+                onClick={handleSignInWithGoogle}
+                className="btn btn-outline"
+              >
+                <img
+                  className="w-11 h-11 rounded-full"
+                  src="https://i.ibb.co/nDFx6YT/png-clipart-google-google-thumbnail.png"
+                  alt=""
+                />
+              </button>
               <button className="btn btn-outline">Git Hub</button>
             </div>
             {success && (
