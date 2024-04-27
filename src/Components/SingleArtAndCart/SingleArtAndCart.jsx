@@ -34,7 +34,9 @@ const SingleArtAndCart = ({ singleArtAndCart }) => {
         <div className="flex justify-end">
           <Link to={`/detailsPage/${_id}`}>
             {" "}
-            <button className="btn btn-secondary">View Details</button>
+            <button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">
+              View Details
+            </button>
           </Link>
         </div>
       </div>

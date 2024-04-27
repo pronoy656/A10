@@ -73,7 +73,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
-      <div className="navbar-end flex gap-x-4">
+      <div className="navbar-end flex">
         <label className="flex cursor-pointer gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -117,17 +117,24 @@ const NavBar = () => {
             </div>
           </div>
           ;
-          <a onClick={handleLogOut} className="btn bg-red-600 text-white">
+          <a
+            onClick={handleLogOut}
+            className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white"
+          >
             Log Out
           </a>
         </div>
       ) : (
         <div className="navbar-end">
           <NavLink to={"/login"}>
-            <a className="btn">Log in</a>
+            <a className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white mr-2">
+              Log in
+            </a>
           </NavLink>
           <NavLink to={"/register"}>
-            <a className="btn">Register</a>
+            <a className="btn bg-gradient-to-r from-pink-500 to-yellow-500 text-white">
+              Register
+            </a>
           </NavLink>
         </div>
       )}

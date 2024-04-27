@@ -103,7 +103,9 @@ const Login = () => {
             )}
             {error && <p className="font-medium mt-3 text-red-600">{error}</p>}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white  mr-2">
+                Login
+              </button>
             </div>
             <p className="text-base font-semibold mt-4">
               Do You Have any Account? Please{" "}

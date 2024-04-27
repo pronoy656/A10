@@ -7,7 +7,11 @@ const Home = () => {
   const allArtAndCarts = useLoaderData();
   return (
     <div>
-      <h1>This is home page</h1>
+      <div className="text-center mb-14 mt-10">
+        <p className="mb-3">Welcome Our</p>
+        <p className="mb-3">Art & Craft Store</p>
+        <p className="mb-3">Be Art & Craft , Be Creative</p>
+      </div>
       <Banner></Banner>
 
       {/* load data and map */}
