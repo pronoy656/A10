@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import SingleArtAndCart from "../SingleArtAndCart/SingleArtAndCart";
 import ExtraCustomer from "../ExtraCustomer/ExtraCustomer";
 import { Typewriter } from "react-simple-typewriter";
+import ExtraImage from "../ExtraImage/ExtraImage";
 
 const Home = () => {
   const allArtAndCarts = useLoaderData();
@@ -42,6 +43,7 @@ const Home = () => {
           ></SingleArtAndCart>
         ))}
       </div>
+      <ExtraImage></ExtraImage>
       <ExtraCustomer></ExtraCustomer>
     </div>
   );
