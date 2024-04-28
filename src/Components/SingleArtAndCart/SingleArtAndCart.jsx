@@ -20,7 +20,7 @@ const SingleArtAndCart = ({ singleArtAndCart }) => {
     <div>
       <div className="w-[420px] h-[640px] border space-y-4 p-4 bg-slate-100">
         <img className="w-96 h-72 rounded-2xl" src={image} alt="" />
-        <h1 className="text-2xl font-semibold">Title: {item}</h1>
+        <h1 className="text-2xl font-semibold text-red-600">Title: {item}</h1>
         <h1 className="text-xl font-medium">Subcategory: {subCategory}</h1>
         <div className="flex justify-between">
           <h1 className="text-xl font-medium">Price: {price} BDT</h1>
