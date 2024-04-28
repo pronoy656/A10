@@ -16,6 +16,7 @@ import DetailsPage from "./Components/DetailsPage/DetailsPage.jsx";
 import AuthProvider from "./Components/AuthProvider/AuthProvider.jsx";
 import toast, { Toaster } from "react-hot-toast";
 import { Typewriter } from "react-simple-typewriter";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,11 +36,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCraftItem",
-        element: <AddCraftItem></AddCraftItem>,
+        element: (
+          <PrivateRoute>
+            <AddCraftItem></AddCraftItem>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myArtAndCraftList",
-        element: <MyArtAndCraftList></MyArtAndCraftList>,
+        element: (
+          <PrivateRoute>
+            <MyArtAndCraftList></MyArtAndCraftList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -51,7 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/detailsPage/:id",
-        element: <DetailsPage></DetailsPage>,
+        element: (
+          <PrivateRoute>
+            <DetailsPage></DetailsPage>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/artAndCrafts/${params.id}`),
       },
