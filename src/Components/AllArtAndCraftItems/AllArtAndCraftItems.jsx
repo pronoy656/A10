@@ -5,7 +5,6 @@ const AllArtAndCraftItems = () => {
   const allArtAndCarts = useLoaderData();
   return (
     <div>
-      <h1>All art and craft items page</h1>
       <div className="">
         {allArtAndCarts.map((singleArtAndCart) => (
           <ShowAllData
