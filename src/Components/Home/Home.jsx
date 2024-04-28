@@ -4,6 +4,7 @@ import SingleArtAndCart from "../SingleArtAndCart/SingleArtAndCart";
 import ExtraCustomer from "../ExtraCustomer/ExtraCustomer";
 import { Typewriter } from "react-simple-typewriter";
 import ExtraImage from "../ExtraImage/ExtraImage";
+import ExtraRate from "../ExtarRate/ExtraRate";
 
 const Home = () => {
   const allArtAndCarts = useLoaderData();
@@ -30,6 +31,7 @@ const Home = () => {
         </h3>
       </div>
       <Banner></Banner>
+      <ExtraRate></ExtraRate>
 
       {/* load data and map */}
       <p className="text-center text-3xl font-extrabold mb-14 mt-12">
