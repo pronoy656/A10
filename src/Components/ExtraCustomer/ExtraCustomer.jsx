@@ -1,7 +1,6 @@
 const ExtraCustomer = () => {
   return (
     <div>
-      <h1>THis is extra sctiionknkjn</h1>
       <div className="mt-10 mb-9">
         <div className="text-center">
           <h1 className="text-[#ffa135] text-3xl font-semibold">
