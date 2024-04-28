@@ -30,7 +30,7 @@ const ShowAllData = ({ singleArtAndCart }) => {
         </thead>
         <tbody>
           {/* row 1 */}
-          <tr className="bg-slate-100">
+          <tr className="">
             <th>
               <label>
                 <input type="checkbox" className="checkbox" />
