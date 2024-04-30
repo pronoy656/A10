@@ -11,6 +11,7 @@ const MyArtAndCraftList = () => {
   const { user } = useContext(AuthContext);
   const [usersItem, setUsersItem] = useState([]);
   const [filter, setFilter] = useState([]);
+  const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/MyArtAndCrafts/${user?.email}`)
       .then((res) => res.json())
@@ -18,7 +19,7 @@ const MyArtAndCraftList = () => {
         setUsersItem(data);
         setFilter(data);
       });
-  }, []);
+  }, [user, control]);
 
   // job filter
   const handleJobFilter = (filter) => {
@@ -59,6 +60,7 @@ const MyArtAndCraftList = () => {
             text: "Your item has been deleted.",
             icon: "success",
           });
+          setControl(!control);
         }
       }
     });

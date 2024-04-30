@@ -1,9 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, userLogout } = useContext(AuthContext);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("synthwave");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   // work logout button
   const handleLogOut = () => {
@@ -91,6 +108,7 @@ const NavBar = () => {
           </svg>
           <input
             type="checkbox"
+            onChange={handleToggle}
             value="synthwave"
             className="toggle theme-controller"
           />
