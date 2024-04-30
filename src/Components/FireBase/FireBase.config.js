@@ -3,16 +3,28 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
+console.log('inside',import.meta.env.VITE_PASS )
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDZkCayuqBabrkmUu1O5Z86dhmCOvXcmjg",
-  authDomain: "assignment-10-7d341.firebaseapp.com",
-  projectId: "assignment-10-7d341",
-  storageBucket: "assignment-10-7d341.appspot.com",
-  messagingSenderId: "373838140114",
-  appId: "1:373838140114:web:ac34a398579adc0a5a130b"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
+
+
+
+// apiKey: import.meta.env.VITE_PASS,
+// authDomain: import.meta.env.VITE_AUTHDOMAIN,
+// projectId: import.meta.env.VITE-PROJECTID,
+// storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+// messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+// appId: import.meta.env.VITE_APPID,

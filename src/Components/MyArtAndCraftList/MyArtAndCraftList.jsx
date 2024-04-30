@@ -4,17 +4,34 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { data } from "autoprefixer";
 import { Link } from "react-router-dom";
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 const MyArtAndCraftList = () => {
   const { user } = useContext(AuthContext);
   const [usersItem, setUsersItem] = useState([]);
+  const [filter, setFilter] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/MyArtAndCrafts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUsersItem(data);
+        setFilter(data);
       });
   }, []);
+
+  // job filter
+  const handleJobFilter = (filter) => {
+    if (filter === "all") {
+      setFilter(data);
+    } else if (filter === "Yes") {
+      const customizeYes = data.filter((dot) => dot.customize === "Yes");
+      setFilter(customizeYes);
+    } else if (filter === "No") {
+      const customizeNo = data.filter((dot) => dot.customize === "No");
+      setFilter(customizeNo);
+    }
+  };
 
   // Delete Operation
   const handleDelete = (_id) => {
@@ -57,16 +74,19 @@ const MyArtAndCraftList = () => {
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li>
-            <a>Item 1</a>
+          <li onClick={() => handleJobFilter("all")}>
+            <a>All</a>
           </li>
-          <li>
-            <a>Item 2</a>
+          <li onClick={() => handleJobFilter("Yes")}>
+            <a>Yes</a>
+          </li>
+          <li onClick={() => handleJobFilter("No")}>
+            <a>No</a>
           </li>
         </ul>
       </div>
       <div className="grid md:grid-cols-3 mt-20">
-        {usersItem.map((userItem) => (
+        {filter.map((userItem) => (
           <div
             className="border rounded-2xl w-[420px] h-[640px] space-y-5 p-4 "
             key={userItem._id}
@@ -81,15 +101,17 @@ const MyArtAndCraftList = () => {
             <h1>rating:{userItem.rating}</h1>
             <h1>Customized:{userItem.customize}</h1>
             <h1>Stock-Status:{userItem.stockStatus}</h1>
-            <div className="flex gap-x-7">
+            <div className="flex gap-x-10">
               <Link to={`/update/${userItem._id}`}>
-                <button className="btn btn-primary">Update</button>
+                <button className="btn bg-green-700 text-2xl">
+                  <MdEdit />
+                </button>
               </Link>
               <button
                 onClick={() => handleDelete(userItem._id)}
-                className="btn btn-secondary"
+                className="btn bg-red-700 text-2xl text-white"
               >
-                Delete
+                <MdDelete />
               </button>
             </div>
           </div>
