@@ -18,7 +18,7 @@ const SingleArtAndCart = ({ singleArtAndCart }) => {
 
   return (
     <div>
-      <div className="w-[420px] h-[640px] border space-y-4 p-4 ">
+      <div className="w-[420px] h-[640px] border rounded-2xl space-y-4 p-4 ">
         <img className="w-96 h-72 rounded-2xl" src={image} alt="" />
         <h1 className="text-2xl font-semibold text-red-600">Title: {item}</h1>
         <h1 className="text-xl font-medium">Subcategory: {subCategory}</h1>

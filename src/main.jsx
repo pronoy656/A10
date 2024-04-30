@@ -17,6 +17,7 @@ import AuthProvider from "./Components/AuthProvider/AuthProvider.jsx";
 import toast, { Toaster } from "react-hot-toast";
 import { Typewriter } from "react-simple-typewriter";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute.jsx";
+import Update from "./Components/Update/Update.jsx";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,12 @@ const router = createBrowserRouter([
             <DetailsPage></DetailsPage>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/artAndCrafts/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/artAndCrafts/${params.id}`),
       },
