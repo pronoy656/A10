@@ -8,7 +8,7 @@ const ExtraCustomer = () => {
           </h1>
           <p className="text-2xl mt-4">Our client Review</p>
         </div>
-        <div className="md:flex justify-center gap-x-7">
+        <div className="grid md:grid-cols-4 gap-x-7">
           <div
             className="border w-72 relative bg-slate-200 text-black rounded-2xl mt-36 p-4"
             data-aos="zoom-in"

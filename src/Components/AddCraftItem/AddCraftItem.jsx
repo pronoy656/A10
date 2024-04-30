@@ -56,11 +56,13 @@ const AddCraftItem = () => {
   };
 
   return (
-    <div className="w-[1080px] border flex justify-center">
+    <div className="w-[1080px]  md:flex justify-center mt-9">
       <div>
-        <h1>Add craft item form page</h1>
+        <h1 className="text-3xl text-red-700 font-semibold mb-9 mt-5">
+          Add craft item form page
+        </h1>
         <form onSubmit={handleAddProduct}>
-          <div className="flex gap-x-5">
+          <div className="md:flex gap-x-5">
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">Image URL</span>
@@ -86,7 +88,7 @@ const AddCraftItem = () => {
               />
             </label>
           </div>
-          <div className="flex gap-x-5">
+          <div className="md:flex gap-x-5">
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">Subcategory-Name</span>
@@ -118,7 +120,7 @@ const AddCraftItem = () => {
               />
             </label>
           </div>
-          <div className="flex gap-x-5">
+          <div className="md:flex gap-x-5">
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">Price</span>
@@ -144,7 +146,7 @@ const AddCraftItem = () => {
               />
             </label>
           </div>
-          <div className="flex gap-x-5">
+          <div className="md:flex gap-x-5">
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">Customization-example-</span>
@@ -170,7 +172,7 @@ const AddCraftItem = () => {
               />
             </label>
           </div>
-          <div className="flex gap-x-5">
+          <div className="md:flex gap-x-5">
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">stock-Status</span>
@@ -212,7 +214,7 @@ const AddCraftItem = () => {
             />
           </label>
           <input
-            className="btn w-full mt-6 mb-7"
+            className="btn btn-secondary md:w-full mt-6 mb-7"
             type="submit"
             value="Add Product"
           />

@@ -53,15 +53,19 @@ const MyArtAndCraftList = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your item has been deleted.",
+              icon: "success",
+            });
+            fetch(`http://localhost:5000/MyArtAndCrafts/${user?.email}`)
+              .then((res) => res.json())
+              .then((d) => {
+                // setUsersItem(d);
+                setFilter(d);
+              });
           });
-        if (data.deleteCount > 0) {
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-          });
-          setControl(!control);
-        }
       }
     });
   };

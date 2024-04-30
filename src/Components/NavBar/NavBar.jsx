@@ -85,7 +85,9 @@ const NavBar = () => {
           src="https://i.ibb.co/mDcYMXS/mokeup.jpg"
           alt=""
         />
-        <a className="btn btn-ghost text-xl">Art and Craft Store</a>
+        <a className="btn btn-ghost text-xl">
+          Art and <br /> Craft Store
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
