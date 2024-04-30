@@ -12,6 +12,10 @@ Five Features of my website
 8.USer can update of any product if he/she want.
 9.also he/she can delete of any product.
 
+For animation
+1.React awasome reveal
+2.React simple typewriter
+
 **\*\***OK These are the main features of my website**\*\***
 
                  **Thank You**
