@@ -57,7 +57,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-[url('https://i.ibb.co/KLv6WNq/5192479.jpg')] text-white mt-10 rounded-2xl">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register Now</h1>
@@ -117,9 +117,11 @@ const Register = () => {
             )}
             {error && <p className="font-medium mt-3 text-red-600">{error}</p>}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn text-white  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500">
+                Register
+              </button>
             </div>
-            <p className="mt-4 text-base font-semibold">
+            <p className="mt-4 text-base font-semibold text-black">
               Already Have an Account? Please{" "}
               <Link to={"/login"}>
                 <span className="text-red-600">log in </span>

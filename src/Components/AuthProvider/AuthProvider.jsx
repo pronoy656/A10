@@ -10,9 +10,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../FireBase/FireBase.config";
+import { GithubAuthProvider } from "firebase/auth/cordova";
 
 // Google provider
 const googleProvider = new GoogleAuthProvider();
+// Github provider
+const gitHubProvider = new GithubAuthProvider();
 
 const auth = getAuth(app);
 
@@ -47,6 +50,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  // Github signin
+  const signInWithGithub = () => {
+    setLoading(true);
+    return signInWithPopup(auth, gitHubProvider);
+  };
   // user logout
   const userLogout = () => {
     setLoading(true);
@@ -72,6 +80,7 @@ const AuthProvider = ({ children }) => {
     userLogin,
     userLogout,
     signInWithGoogle,
+    signInWithGithub,
     updateUserProfile,
     setUser,
   };

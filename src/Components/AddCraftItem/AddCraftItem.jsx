@@ -56,7 +56,7 @@ const AddCraftItem = () => {
   };
 
   return (
-    <div className="w-[1080px]  md:flex justify-center mt-9">
+    <div className="w-[1080px]  md:flex justify-center mt-9 animate__animated animate__backInLeft">
       <div>
         <h1 className="text-3xl text-red-700 font-semibold mb-9 mt-5">
           Add craft item form page

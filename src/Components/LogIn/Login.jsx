@@ -4,7 +4,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { userLogin, signInWithGoogle } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   // success message
   const [success, setSuccess] = useState("");
   // Error Message
@@ -53,11 +54,25 @@ const Login = () => {
       });
   };
 
+  // github signin
+  const handleSignInWithGithub = () => {
+    signInWithGithub()
+      .then((githubUser) => {
+        const userGithub = githubUser.user;
+        console.log(userGithub);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        const errorCode = error.code;
+        console.log(errorMessage, errorCode);
+      });
+  };
+
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-[url('https://i.ibb.co/qMjyrJ3/3398219.jpg')] mt-10 rounded-2xl">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
+          <h1 className="text-5xl font-bold text-white">Login now!</h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">
@@ -96,7 +111,16 @@ const Login = () => {
                   alt=""
                 />
               </button>
-              <button className="btn btn-outline">Git Hub</button>
+              <button
+                onClick={handleSignInWithGithub}
+                className="btn btn-outline"
+              >
+                <img
+                  className="w-11 h-11 rounded-full"
+                  src="https://i.ibb.co/6ZmQzpN/Git-Hub-Mark-ea2971cee799-1.png"
+                  alt=""
+                />
+              </button>
             </div>
             {success && (
               <p className="font-medium mt-3 text-green-500">{success}</p>

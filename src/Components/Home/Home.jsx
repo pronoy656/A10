@@ -6,6 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 import ExtraImage from "../ExtraImage/ExtraImage";
 import ExtraRate from "../ExtarRate/ExtraRate";
 import { useState } from "react";
+import "animate.css";
 
 const Home = () => {
   const allArtAndCarts = useLoaderData();
@@ -37,7 +38,7 @@ const Home = () => {
       <ExtraRate></ExtraRate>
 
       {/* load data and map */}
-      <p className="text-center text-3xl font-extrabold mb-14 mt-12">
+      <p className="text-center text-3xl font-extrabold mb-14 mt-12 animate__animated animate__bounce">
         Our Collection
       </p>
       <div className="grid md:grid-cols-3 gap-x-4 gap-y-4">

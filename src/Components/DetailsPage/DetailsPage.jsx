@@ -25,12 +25,12 @@ const DetailsPage = () => {
   } = detailsOFSingleArtANdCraft;
 
   return (
-    <div className="mb-11 mt-20">
-      <div className="flex gap-x-6 justify-center">
-        <div className="w-[573px] h-[610px] border">
+    <div className="mb-11 mt-20 animate__animated animate__backInLeft">
+      <div className="md:flex gap-x-6 justify-center">
+        <div className="md:w-[573px] h-[610px] border">
           <img className="h-full w-full" src={image} alt="" />
         </div>
-        <div className="w-[573px] border space-y-5">
+        <div className="md:w-[573px] border space-y-5">
           <h1 className="text-4xl font-bold">Title:{item}</h1>
           <h1 className="text-3xl font-semibold">Subcategory:{subCategory}</h1>
           <h1 className="text-2xl font-sans text-justify">
