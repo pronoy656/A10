@@ -34,7 +34,7 @@ const AddCraftItem = () => {
     console.log(allData);
 
     // sent data from client to server
-    fetch("http://localhost:5000/artAndCrafts", {
+    fetch("https://assignment-10-server-site-beige.vercel.app/artAndCrafts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

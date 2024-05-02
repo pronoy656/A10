@@ -13,7 +13,9 @@ const MyArtAndCraftList = () => {
   const [filter, setFilter] = useState([]);
   const [control, setControl] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/MyArtAndCrafts/${user?.email}`)
+    fetch(
+      `https://assignment-10-server-site-beige.vercel.app/MyArtAndCrafts/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setUsersItem(data);
@@ -47,9 +49,12 @@ const MyArtAndCraftList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/artAndCrafts/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-10-server-site-beige.vercel.app/artAndCrafts/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -59,7 +64,9 @@ const MyArtAndCraftList = () => {
               text: "Your item has been deleted.",
               icon: "success",
             });
-            fetch(`http://localhost:5000/MyArtAndCrafts/${user?.email}`)
+            fetch(
+              `https://assignment-10-server-site-beige.vercel.app/MyArtAndCrafts/${user?.email}`
+            )
               .then((res) => res.json())
               .then((d) => {
                 // setUsersItem(d);

@@ -41,13 +41,16 @@ const Update = () => {
     console.log(allData);
 
     // update data from client to server
-    fetch(`http://localhost:5000/artAndCrafts/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(allData),
-    })
+    fetch(
+      `https://assignment-10-server-site-beige.vercel.app/artAndCrafts/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(allData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
