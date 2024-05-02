@@ -10,7 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../FireBase/FireBase.config";
-import { GithubAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider } from "firebase/auth";
 
 // Google provider
 const googleProvider = new GoogleAuthProvider();

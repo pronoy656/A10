@@ -26,12 +26,12 @@ const MyArtAndCraftList = () => {
   // job filter
   const handleJobFilter = (filter) => {
     if (filter === "all") {
-      setFilter(data);
+      setFilter([...usersItem]);
     } else if (filter === "Yes") {
-      const customizeYes = data.filter((dot) => dot.customize === "Yes");
+      const customizeYes = usersItem.filter((dot) => dot.customize === "Yes");
       setFilter(customizeYes);
     } else if (filter === "No") {
-      const customizeNo = data.filter((dot) => dot.customize === "No");
+      const customizeNo = usersItem.filter((dot) => dot.customize === "No");
       setFilter(customizeNo);
     }
   };
