@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import Lottie from "lottie-react";
+import loginAnimation from "/projects/assignment-10-client-site/src/login animation.json";
 
 const Login = () => {
   const { userLogin, signInWithGoogle, signInWithGithub } =
@@ -73,6 +75,7 @@ const Login = () => {
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-white">Login now!</h1>
+          <Lottie animationData={loginAnimation} loop={true} />;
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">
