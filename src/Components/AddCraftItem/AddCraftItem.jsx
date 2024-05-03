@@ -2,6 +2,8 @@ import { data } from "autoprefixer";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Lottie from "lottie-react";
+import addCraftItems from "/projects/assignment-10-client-site/src/updateanimation.json";
 
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
@@ -56,8 +58,8 @@ const AddCraftItem = () => {
   };
 
   return (
-    <div className="w-[1080px]  md:flex justify-center mt-9 animate__animated animate__backInLeft">
-      <div>
+    <div className="gap-x-8 md:flex justify-center mt-9 animate__animated animate__backInLeft">
+      <div className="md:w-[750px] border">
         <h1 className="text-3xl text-red-700 font-semibold mb-9 mt-5">
           Add craft item form page
         </h1>
@@ -219,6 +221,9 @@ const AddCraftItem = () => {
             value="Add Product"
           />
         </form>
+      </div>
+      <div className="border md:w-[500px]">
+        <Lottie animationData={addCraftItems} loop={true} />;
       </div>
     </div>
   );

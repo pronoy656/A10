@@ -15,6 +15,7 @@ Five Features of my website
 For animation
 1.React awasome reveal
 2.React simple typewriter
+3.Lottie React
 
 **\*\***OK These are the main features of my website**\*\***
 
