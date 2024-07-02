@@ -18,4 +18,6 @@ Five Features of my website:
 2.React simple typewriter
 3.Lottie React
 
+If a user wants to run this project locally then he needs to type **npm run build** in the compiler's terminal
+
 **\*\***OK These are the main features of my website**\*\***
