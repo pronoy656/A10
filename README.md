@@ -1,5 +1,6 @@
-Website Name: Art and craft store
-**My Selected Category is: Painting And Drawing**
+Website Name: **Art and craft store**
+
+This is a very simple website.  Where a user can log out normally and update his profile if he wants.
 
 Five Features of my website
 1.First of all user will login and register
@@ -12,11 +13,9 @@ Five Features of my website
 8.USer can update of any product if he/she want.
 9.also he/she can delete of any product.
 
-For animation
+**For animation**
 1.React awasome reveal
 2.React simple typewriter
 3.Lottie React
 
 **\*\***OK These are the main features of my website**\*\***
-
-                 **Thank You**
